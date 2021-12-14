@@ -1,0 +1,64 @@
+//Calculate the binomial product of two given numbers.
+
+
+
+using System;
+
+namespace fattoriale
+{
+  class Program{
+        static void Main() {
+          int a = AskForAPositiveNumber("inserire il primo numero positivo");
+          int b = AskForAPositiveNumber("inserire il secondo numero positivo");
+
+          int c = Fattoriale(a);
+          int d = Fattoriale(b);
+          int e = Fattoriale(a-b);
+          int f = Fattoriale(b-a);
+          double g, h; 
+          g=c/(d*e);
+          h=d/(a*f);
+
+          if (a>b){
+
+          Console.WriteLine("la combinazione lineare tra " +a+ " e " +b+ " è " +g);
+          }else if (a<b){
+            Console.WriteLine("la combinazione lineare tra " +a+ " e " +b+ " è " +h);
+          }
+          else(a=b){
+            ("la combinazione lineare è 1");
+          }
+
+
+        }
+        static int AskForAPositiveNumber(string message){
+          while(true){
+            Console.WriteLine(message);
+            var input = Console.ReadLine();
+            if(int.TryParse(input, out int number)){
+              if(number>=0){
+              return number;
+              }
+            }
+              Console.WriteLine("il numero non è valido!");        
+          }
+        }
+        private static int Fattoriale(int number)
+   {
+       if (number < 0)
+           return 0;
+       else if (number <= 1)
+           return 1;
+       else
+       {
+           int prod = 1;
+           for (int i = 2; i <= number; i++)
+           {
+               prod *= i;
+           }
+           return prod;
+       }
+   }
+        
+  }
+}
