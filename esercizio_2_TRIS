@@ -1,0 +1,35 @@
+
+//# 2 tris
+//Print the first 100 numbers that are divisible by 5 or 7.
+
+
+/*int  count =0;
+for (int i=1; i<=100000; i++)
+{
+    if(i%5==0 || i%7==0)
+    {
+        Console.WriteLine(i);
+        count++;
+    }
+    if(count== 100)
+    {
+        break;
+    }
+ 
+}   
+Console.ReadKey();*/
+
+int i=0;
+int count =0;
+
+do
+{  
+    i=i+1; 
+    if(i%5==0 || i%7==0)
+    {
+        Console.WriteLine(i);
+        count++;
+    }
+}
+while(count < 100) ;  
+Console.ReadKey();
