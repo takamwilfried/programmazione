@@ -1,0 +1,39 @@
+/*# 12
+Implement a function that, given a number, tells the absolute value of the number. You cannot use `Math.Abs()`.*/
+
+using System;
+using System.Globalization;
+
+
+namespace design
+{
+    class Program
+    {
+        static void Main() {
+            while(true){
+                var a = AbsoluteValue("inserire un numero");
+                
+            break;
+            }
+           
+        }
+
+        static double AbsoluteValue(string message) {
+            while (true) {
+                Console.WriteLine(message);
+                var input = Console.ReadLine();
+                if (double.TryParse(input, out double number)) {
+                    if(number>=0){
+                        Console.WriteLine("il valore assoluto di " + input+ " è " +number);
+                    }else{ 
+                        Console.WriteLine("il valore assoluto di " + input+ " è " + -number);
+
+                    }
+                    return number;
+                }
+                Console.WriteLine("Il numero inserito non è valido!");
+            }
+        }
+        
+    }
+}
