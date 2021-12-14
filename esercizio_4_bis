@@ -1,0 +1,11 @@
+//Print all the numbers between -4 and 19 with a step of 3 (i.e. -4, -1, 2, ...)
+
+
+for (float i=19;i>=-4 && i<=19;i--)
+{
+i=i-2;
+
+Console.WriteLine(i);
+
+}
+Console.ReadKey();
