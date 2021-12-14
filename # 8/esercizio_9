@@ -1,0 +1,46 @@
+/*# 9
+Implement the moltiplication, without using the `*`, but only with sums and a `while` o `for` loop.*/
+
+
+
+using System;
+
+namespace addizione
+{
+    class program
+    {
+        static void Main(){
+           while (true){
+                double number1 = AskNumberToUser("insert the first number");
+                var number2 =AskNumberToUser ("insert the second number");
+                var result= number1;        
+                for(int i =1; i< number2 ; i++){
+                   result = result + number1;
+                     
+                }
+                
+                
+                Console.WriteLine(number1 + " per " +number2+ " vale " + result);
+                Console.WriteLine("----------------------------------------------");
+           }
+
+
+         }
+         
+    
+        static double AskNumberToUser(string message) {
+            while (true) {
+                Console.WriteLine(message);
+                var input = Console.ReadLine();
+                if (double.TryParse(input, out double number)) {
+                    return number;
+                }
+                Console.WriteLine("Il numero inserito non è valido!");
+            }
+        }
+
+        
+        }
+    
+}
+ 
