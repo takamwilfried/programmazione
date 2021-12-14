@@ -1,0 +1,12 @@
+//Print all the numbers divisible by 5 or 7, from 1 to 100.
+
+for (int i=1; i<=100; i++)
+    {
+        var r = i % 5;
+        if(r==0)
+        Console.WriteLine(i);
+        var t = i % 7;
+        if(t==0)
+        Console.WriteLine(i);
+    }
+Console.ReadKey();
