@@ -1,0 +1,60 @@
+/*
+Read 2 numbers from the Console (giving good input messages to the user), and print the sum in a "decorated way", like this:
+
+=====================
+== the sum is: 45! ==
+=====================
+The "=" signs must be well composed, but the number does not have a fixed lenght. How can you check the length of a number?
+*/
+
+using System;
+using System.Globalization;
+
+
+namespace design
+{
+    class Program
+    {
+        static void Main() {
+           while(true){
+            var number1 = AskNumberToUser("Inserisci il primo numero: ");
+            var number2 = AskNumberToUser("Inserisci il secondo numero: ");
+            var result = number1 + number2;
+            var ResultLength = NumberLength(result);
+            var FinalLength = 19 + ResultLength;
+
+            PrintCharNTimes("=", FinalLength);
+
+            Console.WriteLine("\n== the sum is: "+result+ "! ==");
+            
+            PrintCharNTimes("=", FinalLength);
+            Console.WriteLine("\n");
+            PrintCharNTimes("-", FinalLength+20);
+            Console.WriteLine("\n");
+            }
+        }
+
+        static double AskNumberToUser(string message) {
+            while (true) {
+                Console.WriteLine(message);
+                var input = Console.ReadLine();
+                if (double.TryParse(input, out double number)) {
+                    return number;
+                }
+                Console.WriteLine("Il numero inserito non è valido!");
+            }
+        }
+
+        static int NumberLength(double number){
+            string str = number.ToString();
+            int Length = str.Length; 
+
+            return Length;
+        }
+        static void PrintCharNTimes(string s, int n){
+            for  (int i= 1; i<= n; i++){
+                Console.Write(s);
+            }
+        }           
+    }
+}
